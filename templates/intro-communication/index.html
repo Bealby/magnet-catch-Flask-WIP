@@ -17,6 +17,11 @@
             </div>
 
             <div class="col-lg-6 col-md-12 col-sm-12 home-text">
+                <p>xcecrcr
+                    {% for country in countries %}
+                        {{country.country_name}}
+                    {% endfor %}
+                </p>
                 <p>
                     Magnet Fishing is an exciting, growing sport, which involves 'casting' magnets into canals, lakes, off bridges and piers, in the hope of connecting to metal objects. 'Catches' can range from old nails, beer bottle tops,
                     bikes, scooters or even treasure!
@@ -33,7 +38,7 @@
             <div class="col-lg-6 col-md-12 col-sm-12 home-text">
                 <p>
                     This Website serves to bring fellow Magnet fishers together and enables this community to share their finds throughout the Stockholm area. You can input your ‘Catches’ at
-                    <a href="{{url_for('add_catches')}}">Add Catches</a> and you can share them with others at <a href="{{url_for('get_catches')}}">Catch Log</a>.
+                    and you can share them with others at Catch Log</a>.
                 </p>
 
                 <p>So start your adventure in Magnet Fishing today.</p>
