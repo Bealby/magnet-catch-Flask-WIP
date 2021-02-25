@@ -1,0 +1,412 @@
+@import url('https://fonts.googleapis.com/css2?family=Stardos+Stencil&display:100,200,300,400,500,600,700,800|Source+Serif+Pro:100,200,300,400,500,600,700,800|Italianno:100,200,300,400,500,600,700,800');
+
+/*-----BODY-----*/
+
+body {
+	font-family: 'Stardos Stencil', cursive;
+	font-size: 1.6rem;
+	color: rgb(0, 0, 0, 1);
+}
+
+html,
+body {
+	width: 100%;
+	height: 100%;
+}
+
+
+/*-----CONTAINERS-----*/
+
+.container {
+	padding-right: 0.5rem;
+	padding-left: 0.5rem;
+}
+
+
+/*-----Overides main container margins for cleaner poisitoning for all devices-----*/
+
+.home-container {
+	padding-right: 2rem !important;
+	padding-left: 2rem !important;
+}
+
+
+/*-----BACKGROUND IMAGE-----*/
+
+.background {
+	/*alt tag for image???*/
+	background: url("../images/background.jpg") no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+}
+
+#wrapper {
+	width: 100%;
+	height: 100%;
+	overflow: scroll;
+}
+
+
+/*-----NAVIGATION BAR-----*/
+
+.navbar-color {
+	background-color: rgb(254, 17, 71, .8);
+}
+
+.link-font {
+	font-size: 1.3rem;
+	color: rgb(255, 255, 255, 1);
+	font-weight: 600;
+}
+
+.custom-toggler.navbar-toggler {
+	border-color: rgb(255, 255, 255, 1);
+}
+
+.link-font:hover {
+	color: rgb(190, 190, 190, 1) !important;
+	text-decoration: none !important;
+}
+
+
+/*-----HEADERS & CONTENT-----*/
+
+.page-header p {
+	color: rgb(255, 255, 255, 1);
+	font-size: 1.2rem;
+	margin-bottom: 0rem;
+	font-weight: 600;
+	font-family: 'Stardos Stencil', cursive;
+	background-color: rgb(26, 16, 112, 1);
+}
+
+.home-text {
+	font-family: 'Source Serif Pro', serif;
+	font-size: 1.2rem;
+	font-weight: 600;
+	padding: 1.5rem 1.5rem 1.5rem 1.5rem;
+	background-color: rgb(26, 16, 112, 1);
+	color: rgb(255, 255, 255, 1);
+	text-align: left;
+}
+
+.home-quote {
+	font-family: 'Italianno', cursive;
+	font-size: 1.5rem;
+	font-weight: 200;
+	text-align: center;
+}
+
+
+/*-----CATCH LOG-----*/
+
+.accordian-color {
+	border-color: rgb(255, 255, 255, 1);
+}
+
+.catch-log-font {
+	font-size: 1.2rem;
+	color: rgb(0, 0, 0, 1);
+	font-family: 'Source Serif Pro', serif;
+	font-weight: 600;
+}
+
+.catch-log-align {
+	text-align: center;
+	list-style: none;
+	padding-left: 0rem;
+}
+
+.edit-delete-margins {
+	text-align: left;
+	padding-top: 0.6rem;
+    padding-bottom:1rem;
+}
+
+
+/*-----FORMS-----*/
+
+.form-header{
+	color: rgb(255, 255, 255, 1);
+	font-size: 1.2rem;
+	margin-bottom: 0rem;
+	font-weight: 600;
+	font-family: 'Source Serif Pro', serif;
+	background-color: rgb(26, 16, 112, 1);
+}
+
+.form-control:focus {
+	border-color: rgb(254, 17, 71, 1) !important;
+	box-shadow: inset 0 0.0625rem 0.0625rem rgba(0, 0, 0, 0.1), 0 0 0.5rem rgba(254, 17, 71, 1) !important;
+}
+
+.form-fields {
+	font-size: 1.1rem;
+	color: rgb(128, 128, 128, 1);
+	font-family: 'Source Serif Pro', serif;
+	font-weight: 600;
+}
+
+
+/*-----LOGO-----*/
+
+.logo {
+	box-shadow: 0rem 0rem 1.5rem 0rem rgb(0, 0, 0, 1);
+	width: 40%;
+}
+
+.logo-small-device {
+	width: 60%;
+}
+
+
+/*-----IMAGES-----*/
+
+.home-images {
+	width: 90%;
+	border: 0.3rem solid rgb(255, 255, 255, 1);
+	padding: 0rem 0rem 0rem 0rem;
+}
+
+.home-image-left {
+	text-align: center;
+	padding: 3rem 0rem 1.5rem 0rem;
+}
+
+.home-image-right {
+	text-align: center;
+	padding: 3rem 0rem 0rem 0rem;
+}
+
+
+/*-----MODAL-----*/
+
+.modal-image {
+	width: 90%;
+}
+
+
+/*-----EDIT/ DELETE <a> HOVER-----*/
+
+.default-button {
+	background-color: rgb(26, 16, 112, .8);
+	border-color: rgb(26, 16, 112, .8);
+}
+
+.default-button:hover {
+	background-color: rgb(190, 190, 190, 1) !important;
+	border-color: rgb(190, 190, 190, 1) !important;
+}
+
+
+.edit-a {
+	background-color: rgb(255, 255, 255, 1) !important;
+	border-color: rgb(255, 255, 255, 1) !important;
+	color: rgb(26, 16, 112, 1) !important;
+    text-decoration: none !important;
+    font-family: 'Stardos Stencil', cursive;
+    font-size: 1rem;
+    padding: .5rem 1rem .5rem 1rem;
+    border-radius: 0.5rem;
+}
+
+.edit-a:hover {
+	background-color: rgb(190, 190, 190, 1) !important;
+	border-color: rgb(190, 190, 190, 1) !important;
+}
+
+.delete-a {
+	background-color: rgb(254, 17, 71, 1) !important;
+	border: rgb(254, 17, 71, 1) !important;
+    color: rgb(225, 225, 225, 1) !important;
+    text-decoration: none !important;
+    font-family: 'Stardos Stencil', cursive;
+    font-size: 1rem;
+    padding: .5rem .6rem .5rem .6rem;
+    border-radius: 0.5rem;
+}
+
+.delete-a:hover {
+	background-color: rgb(254, 17, 71, .7) !important;
+	border: rgb(254, 17, 71, .7) !important;
+}
+
+
+/*-----ACCORDION COLLAPSE - CATCH LOG-----*/
+
+.btn-block,
+.card-header {
+	background-color: rgb(26, 16, 112, 1);
+	border: rgb(26, 16, 112, 1);
+}
+
+.card {
+	background-color: rgb(255, 255, 255, .8);
+	border: rgb(26, 16, 112, .8);
+}
+
+
+/*-----FONT AWESOME ICONS-----*/
+
+.fa-magnet {
+	color: rgb(254, 17, 71, 1);
+    font-size: 1.8rem;
+    padding-left:0.7rem;
+}
+
+.fa-chevron-left {
+	color: rgb(255, 255, 255, 1);
+}
+
+.fa-hand-point-down {
+	color: rgb(26, 16, 112, 1);
+	font-size: 3rem;
+}
+
+/*-----FOOTER-----*/
+
+.footer {
+	text-align: center;
+	font-size: 0.8rem !important;
+	font-family: 'Source Serif Pro', serif;
+	color: rgb(255, 255, 255, 1);
+}
+
+
+/*-----VIDEO-----*/
+
+.video {
+	border: 0.3rem solid rgb(255, 255, 255, 1);
+}
+
+
+/*-----ERROR MESSAGES-----*/
+
+.error-message {
+	background-color: rgb(254, 17, 71, 1);
+	min-height: 40vh;
+	width: 90%;
+	font-family: 'Source Serif Pro', serif;
+	font-size: 1.8rem;
+	font-weight: 400;
+	padding: 3rem 3rem 3rem 3rem;
+	color: rgb(255, 255, 255, 1);
+}
+
+
+/*-----MEDIA QUERIES-----*/
+
+
+/*Increase size of logo on smalller devices for better viewing. Otherwise too small.*/
+
+@media(min-width:62rem) {
+	.logo {
+		width: 25%;
+	}
+}
+
+
+/*Reduced size of link-font on medium devices for better viewing. Otherwise too big.*/
+
+@media(min-width:62rem) {
+	.link-font {
+		font-size: 1.6rem;
+		color: rgb(255, 255, 255, 1);
+		font-weight: 800;
+	}
+}
+
+
+/*Reduced size of page-header on medium devices for better viewing. Otherwise a little too big.*/
+
+@media(min-width:62rem) {
+	.page-header p {
+		color: rgb(255, 255, 255, 1);
+		font-size: 1.5rem;
+		margin-bottom: 0rem;
+		font-weight: 600;
+		font-family: 'Stardos Stencil', cursive;
+		background-color: rgb(26, 16, 112, 1);
+	}
+}
+
+
+/*Reduced padding to provide more room for form fields on smaller devices (add_catches.html).*/
+
+@media(min-width:31.875rem) {
+	.container {
+		padding-right: 0.9375rem;
+		padding-left: 0.9375rem;
+	}
+}
+
+
+/*Reduce 'Magnet' field padding to provide more room on smaller devices for add_catches.html.*/
+
+@media(min-width:48rem) {
+	.catch-log-align {
+		text-align: left;
+		list-style: none;
+	}
+}
+
+
+/*Adjust edit and delete icons padding-left, top & bottom for smaller devices. To fit better on screen*/
+
+@media(min-width:48rem) {
+	.edit-delete-margins {
+		text-align: right;
+		padding-top: 0rem;
+        padding-bottom:0rem;
+	}
+}
+
+
+/*Shift image center on smaller devices for better layout. Also increased bottom padding for better postioning*/
+
+@media(min-width:62rem) {
+	.home-image-left {
+		text-align: left;
+		padding: 0rem 0rem 0rem 0rem;
+	}
+}
+
+
+/*Shift image center on medium and smaller devices for better layout. Also increased top padding for better postioning */
+
+@media(min-width:62rem) {
+	.home-image-right {
+		text-align: right;
+		padding: 0rem 0rem 0rem 0rem !important;
+	}
+}
+
+
+/*Justify text for smaller devices for easier reading*/
+
+@media(min-width:31.875rem) {
+	.home-text {
+		font-family: 'Source Serif Pro', serif;
+		font-size: 1.2rem;
+		font-weight: 600;
+		padding: 1.5rem 1.5rem 1.5rem 1.5rem;
+		background-color: rgb(26, 16, 112, 1);
+		color: rgb(255, 255, 255, 1);
+		text-align: justify;
+	}
+}
+
+
+/*Reduced size of font for better fit in iphone 5 and samsung 7. Text otherwise overlaped background*/
+
+@media(min-width:31.875rem) {
+	.form-header{
+		color: rgb(255, 255, 255, 1);
+		font-size: 1.4rem;
+		margin-bottom: 0rem;
+		font-weight: 600;
+		font-family: 'Source Serif Pro', serif;
+		background-color: rgb(26, 16, 112, 1);
+	}
+}

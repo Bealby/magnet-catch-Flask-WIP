@@ -1,0 +1,78 @@
+{% extends 'base.html' %} {% block content %}
+
+<section>
+
+<div class="container pt-5">
+    <div class="row">
+        <div class="col-8 offset-2 text-center page-header">
+            <p>Check Catches</p>
+        </div>
+    </div>
+</div>
+
+
+<!--Accordion Collapse-->
+<!--Loop index from the jinja for loop used for collapse function to work individually-->
+<div class="accordion pt-5" id="accordionExample">
+    {% for catch_log in catch_log %}
+    <div class="card mb-2">
+        <div class="card-header" id="headingOne">
+            <div class="row">
+                <div class="col-md-8 col-sm-12">
+                    <button class="btn btn-block text-left pl-0 form-header" type="button" data-toggle="collapse" data-target="#collapse{{ loop.index }}" aria-expanded="false" aria-controls="collapseOne">
+                        <i class="fas fa-chevron-down"></i>&nbsp;&nbsp;&nbsp;{{catch_log.area_name}} - {{catch_log.catch_date}}
+                    </button>
+                </div>
+                <div class="col-md-4 col-sm-12 edit-delete-margins">
+                    <i class="fas fa-magnet fa-rotate-90 pt-0"></i>&nbsp;
+                    <a href="{{url_for('edit_catch_log', catch_log_id=catch_log._id)}}" class="edit-a mr-2">Edit</a>
+                    <a href="{{url_for('delete_catch_log', catch_log_id=catch_log._id)}}" class="delete-a">Delete</a>
+                </div>
+            </div>
+        </div>
+
+        <div id="collapse{{ loop.index }}" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+            <div class="card-body catch-log-font">
+                <div class="row">
+                    <div class="col-md-6 col-sm-12">
+                        <p class="catch-log-align"><u>NAME</u></p>
+                        <ul class="catch-log-align">
+                            <li>{{catch_log.name}}</li>
+                        </ul>
+
+                        <p class="catch-log-align"><u>EMAIL</u></p>
+                        <ul class="catch-log-align">
+                            <li>{{catch_log.email}}</li>
+                        </ul>
+
+                        <p class="catch-log-align"><u>LOCATION</u></p>
+                        <ul class="catch-log-align">
+                            <li>{{catch_log.location_name}}</li>
+                        </ul>
+                    </div>
+
+                    <div class="col-md-6 col-sm-12 catch-log-align">
+                        <p class="catch-log-align"><u>MAGNET</u></p>
+                        <ul class="catch-log-align">
+                            <li>{{catch_log.magnet}}</li>
+                        </ul>
+                        <p class="catch-log-align"><u>CATCHES</u></p>
+                        <ol class="catch-log-align text-center">
+                            <li class="catch-log-align">{{catch_log.catch_1}}</li>
+                            <li class="catch-log-align">{{catch_log.catch_2}}</li>
+                            <li class="catch-log-align">{{catch_log.catch_3}}</li>
+                            <li class="catch-log-align">{{catch_log.catch_4}}</li>
+                            <li class="catch-log-align">{{catch_log.catch_5}}</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% endfor %}
+</div>
+
+</section>
+
+{% endblock %}

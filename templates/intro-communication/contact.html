@@ -1,0 +1,40 @@
+{% extends 'base.html' %} {% block content %}
+
+<section>
+    <div class="container pt-5">
+        <div class="row">
+            <div class="col-8 offset-2 text-center page-header">
+                <p>Let's Connect</p>
+            </div>
+        </div>
+
+        <!--Contact Form-->
+        <div class="center-form pt-4 col-sm-12 col-md-10 offset-md-1">
+            <form onsubmit="return sendMail(this);" class="form-fields" id="myForm">
+                <input type="text" name="name" class="form-control mt-3 form-fields" id="fullname" placeholder="Name" required />
+                <input type="email" name="emailaddress" class="form-control mt-3 form-fields" id="emailaddress" placeholder="Email" required />
+                <textarea rows="5" name="comment" class="form-control mt-3 form-fields" id="comment" placeholder="Comment" required></textarea>
+
+                <div class="container pt-3">
+                    <div class="row">
+                        <div class="col-10 offset-1 text-center">
+                            <button type="submit" class="btn btn-secondary text-center default-button">Send</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!--Scripts for contact.html only-->
+
+{% endblock %} {% block scripts %}
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.3.2/dist/email.min.js"></script>
+<script src="{{ url_for('static', filename='js/sendEmail.js') }}"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script>
+    emailjs.init("{{ EMAILJS_KEY }}");
+</script>
+{% endblock %}
+
