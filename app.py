@@ -19,7 +19,9 @@ mongo = PyMongo(app)
 
 @app.route('/')
 def home():
-    return render_template("intro-communication/index.html")
+    countries = mongo.db.countries.find()
+    return render_template("intro-communication/index.html",
+                           countries=countries)
 
 
 if __name__ == "__main__":
