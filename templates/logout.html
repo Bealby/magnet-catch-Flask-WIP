@@ -1,31 +1,52 @@
-{% extends 'base.html' %} 
+{% extends 'base.html' %}
 
 {% block content %}
-<div class="container">
-    <div class="row login">
-        <div class="col">
-        <form method="POST" action="{{ url_for('login') }}">
-            <!-- username -->
-            <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">Email address</label>
-                <input type="text" class="form-control" id="username" name="username" aria-describedby="emailHelp"
-                    minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
-                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-            </div>
-            <!-- username -->
-            <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label">Password</label>
-                <input id="password" name="password" class="form-control" type="password" minlength="5" maxlength="15"
-                    pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
-            </div>
-            <div class="mb-3 form-check">
-                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                <label class="form-check-label" for="exampleCheck1">Check me out</label>
-            </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
+
+<div class="container pt-5">
+    <div class="row">
+        <div class="col text-center page-header text-uppercase">
+            <p>Logout</p>
         </div>
     </div>
 </div>
+
+<!--Logout Form-->
+<div class="container pt-5">
+    <div class="row">
+        <div class="col-12 mt-4 mb-5 user-form">
+            <div class="col-12 user-border main-text user-field-margin pt-5 pb-4">
+                <form method="POST" action="{{ url_for('logout') }}">
+                    <!-- username -->
+                    <div class="mb-3">
+                        <input placeholder="Username" type="text" class="form-control" id="username" name="username"
+                            aria-describedby="emailHelp" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$"
+                            class="validate" required>
+                    </div>
+                    <!-- password -->
+                    <div class="mb-3">
+                        <input placeholder="Password" id="password" name="password" class="form-control" type="password"
+                            minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-font-send  hover-overlay-text">Logout</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section>
+    <!-- flash messages -->
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    {% for message in messages %}
+    <div class="row flashes">
+        <h4 class="light-blue lighten-4 center-align">{{ message }}</h4>
+    </div>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+</section>
 
 {% endblock %}
