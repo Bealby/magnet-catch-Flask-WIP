@@ -65,12 +65,12 @@
             {% if messages %}
             {% for message in messages %}
             <div class="row toast-container">
-                <div class="col toast-text toasts pt-1 pb-1" id="timer">
-                    <div class="toast-cross text-muted">
+                <div class="col toast-text toasts toast-cross pt-1 pb-1" id="timer">
+                    <div class="toast-cross">
                         <a href=""><p class="mb-0 text-right"><i class="fas fa-times"></i></p></a>
                     </div>
                     <div>
-                        <p class="mb-0 text-muted pt-1">{{ message }}</p>
+                        <p class="mb-0 pt-1">{{ message }}</p>
                     </div>
                 </div>
             </div>

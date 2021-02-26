@@ -54,7 +54,7 @@ body {
 /*-----NAVIGATION BAR-----*/
 
 .navbar-color {
-	background-color: rgb(254, 17, 71, 1);;
+	background-color: rgb(254, 17, 71, 1);
 }
 
 .link-font {
@@ -304,6 +304,10 @@ body {
 	font-size: 3rem;
 }
 
+.fa-times{
+	color: rgb(0, 0, 0, 1);
+}
+
 /*-----FOOTER-----*/
 
 .footer {
@@ -323,7 +327,7 @@ body {
 }
 
 .toasts{
-    border:0.2rem solid rgb(91, 192, 222, 1);
+    border:0.1rem solid rgb(254, 17, 71, 1);
     background-color:rgb(255, 255, 255, 0.8) !important;
 }
 
@@ -336,7 +340,7 @@ body {
 
 .toast-cross{
       border-bottom-style:solid;
-      border-color:rgb(247), 247, 247, 1);
+      border-color:rgb(0, 0, 0, 0.8);
 }
 
 /*----Error Messages-----*/
