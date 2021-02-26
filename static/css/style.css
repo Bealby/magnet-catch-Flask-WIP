@@ -29,8 +29,8 @@ body {
 /*-----Overides main container margins for cleaner poisitoning for all devices-----*/
 
 .home-container {
-	padding-right: 2rem !important;
-	padding-left: 2rem !important;
+	padding-right: 1rem !important;
+	padding-left: 1rem !important;
 }
 
 
