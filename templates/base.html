@@ -67,7 +67,9 @@
             <div class="row toast-container">
                 <div class="col toast-text toasts toast-cross pt-1 pb-1" id="timer">
                     <div class="toast-cross">
-                        <a onclick="this.parentNode.parentNode.style.display = 'none'"><p class="mb-0 text-right"><i class="fas fa-times"></i></p></a>
+                        <a onclick="this.parentNode.parentNode.style.display = 'none'">
+                            <p class="mb-0 text-right"><i class="fas fa-times"></i></p>
+                        </a>
                     </div>
                     <div>
                         <p class="mb-0 pt-1">{{ message }}</p>
@@ -84,25 +86,30 @@
 
         </div>
         <!--Footer-->
-        <footer>
-            <div class="container footer-style pt-5 pb-2" id="wrapper-footer">
-                <div class="row footer">
-                    <div class="col-12">
-                        <p>Copyright <i class="far fa-copyright"></i> 2020 Murray Bealby. All Rights Reserved.</p>
-                    </div>
+
+        <div class="container footer-style pt-5 pb-2" id="wrapper-footer">
+            <div class="row footer">
+                <div class="col-12 my-auto">
+                    <p>Copyright <i class="far fa-copyright"></i> 2020 Murray Bealby. All Rights Reserved.</p>
                 </div>
             </div>
-        </footer>
-        
-
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-        <script src="{{ url_for('static', filename='js/toasts.js') }}"></script>
-
-        {% block scripts %}
-        {% endblock %}
+        </div>
     </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+    <script src="{{ url_for('static', filename='js/toasts.js') }}"></script>
+
+    {% block scripts %}
+    {% endblock %}
+
 </body>
 
 </html>
