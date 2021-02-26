@@ -1,15 +1,16 @@
-{% extends 'base.html' %} 
+{% extends 'base.html' %}
 
 {% block content %}
 
 <div class="container pt-5">
     <div class="row">
+         <!-- If statement for Name otherwise Username -->
         <div class="col text-center page-header">
             {% if name %}
             <p>{{ name }}</p>
-             {% else %}
+            {% else %}
             <p>{{ username }}</p>
-               {% endif %}
+            {% endif %}
         </div>
     </div>
 </div>
