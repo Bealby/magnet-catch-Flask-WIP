@@ -159,6 +159,18 @@ body {
 	font-weight: 600;
 }
 
+ .user-form {
+     padding-right: 2rem;
+     padding-left: 2rem;
+}
+
+ .user-border {
+     border-radius: 3rem;
+     box-shadow: 0rem 0rem 0.5rem 0rem rgb(0, 0, 0, 1);
+     background-color: rgb(255, 255, 255);
+     border: rgb(211, 235, 230);
+}
+
 
 /*-----LOGO-----*/
 
