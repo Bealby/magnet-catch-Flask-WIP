@@ -313,13 +313,14 @@ body {
 	color: rgb(255, 255, 255, 1);
 }
 
+/*-----ERROR MESSAGES-----*/
 
-/*-----VIDEO-----*/
-
-.video {
-	border: 0.3rem solid rgb(255, 255, 255, 1);
+.toast-container{
+    position:fixed;
+    right:0.6rem;
+    top:4rem;
+    z-index: 99999999999;
 }
-
 
 /*-----ERROR MESSAGES-----*/
 
