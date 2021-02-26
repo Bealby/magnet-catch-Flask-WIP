@@ -209,7 +209,7 @@ body {
 }
 
 
-/*-----EDIT/ DELETE <a> HOVER-----*/
+/*-----EDIT/ DELETE/ Button <a> HOVER-----*/
 
 .default-button {
 	background-color: rgb(26, 16, 112, .8);
@@ -252,6 +252,20 @@ body {
 .delete-a:hover {
 	background-color: rgb(254, 17, 71, .7) !important;
 	border: rgb(254, 17, 71, .7) !important;
+}
+
+ .btn-font-send {
+     background-color:rgb(67, 67, 67, 1);
+     font-weight: 600;
+     letter-spacing: 2px;
+     border-radius: 0.5rem;
+     box-shadow: 0rem 0rem 0.5rem 0rem rgb(0, 0, 0, 1);
+     color: rgb(255,255, 255);
+}
+
+/*---hover overlay for SEND icon button---*/
+ .hover-overlay-text:hover{
+     transform: scale(1.1) !important;
 }
 
 
