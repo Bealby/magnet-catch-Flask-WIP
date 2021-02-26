@@ -334,6 +334,13 @@ body {
     color: rgb(0, 0, 0, 1);
 }
 
+.toast-cross{
+      border-bottom-style:solid;
+      border-color:rgb(247), 247, 247, 1);
+}
+
+/*----Error Messages-----*/
+
 .error-message {
 	background-color: rgb(254, 17, 71, 1);
 	min-height: 40vh;
