@@ -54,7 +54,7 @@ body {
 /*-----NAVIGATION BAR-----*/
 
 .navbar-color {
-	background-color: rgb(255, 255, 255, 1);
+	background-color: rgb(254, 17, 71, 1);;
 }
 
 .link-font {
@@ -137,7 +137,6 @@ body {
 
 
 /*-----FORMS-----*/
-
 .form-header{
 	color: rgb(255, 255, 255, 1);
 	font-size: 1.2rem;
