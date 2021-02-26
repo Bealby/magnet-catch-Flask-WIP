@@ -1,7 +1,3 @@
-<script>
-$(document).ready(function(){
-  $("#myBtn").click(function(){
-    $('.toast').toast('show');
-  });
-});
-</script>
+setTimeout(function(){
+  $('#timer').remove();
+}, 5000);
