@@ -1,11 +1,7 @@
-function myFunction() {
-  document.getElementById("toast");
-}
-
-
-
-setTimeout(function(){
-  if ($('#toast').length > 0) {
-    $('#toast').remove();
-  }
-}, 5000)
+<script>
+$(document).ready(function(){
+  $("#myBtn").click(function(){
+    $('.toast').toast('show');
+  });
+});
+</script>

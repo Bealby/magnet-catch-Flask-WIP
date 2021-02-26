@@ -313,16 +313,26 @@ body {
 	color: rgb(255, 255, 255, 1);
 }
 
-/*-----ERROR MESSAGES-----*/
+/*----Toasts-----*/
 
 .toast-container{
     position:fixed;
-    right:0.6rem;
-    top:4rem;
+    right:1.5rem;
+    top:0.5rem;
     z-index: 99999999999;
 }
 
-/*-----ERROR MESSAGES-----*/
+.toasts{
+    border:0.2rem solid rgb(91, 192, 222, 1);
+    background-color:rgb(255, 255, 255, 0.8) !important;
+}
+
+.toast-text{
+    font-family: 'Source Serif Pro', serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: rgb(0, 0, 0, 1);
+}
 
 .error-message {
 	background-color: rgb(254, 17, 71, 1);
