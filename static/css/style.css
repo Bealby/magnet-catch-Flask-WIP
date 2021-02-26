@@ -159,8 +159,8 @@ body {
 }
 
  .user-form {
-     padding-right: 2rem;
-     padding-left: 2rem;
+     padding-right: 1rem;
+     padding-left: 1rem;
 }
 
  .user-border {
@@ -170,6 +170,10 @@ body {
      border: rgb(211, 235, 230);
 }
 
+ .user-field-margin{
+     padding-left: 1.5rem;
+     padding-right: 1.5rem;
+}
 
 /*-----LOGO-----*/
 
@@ -255,12 +259,12 @@ body {
 }
 
  .btn-font-send {
-     background-color:rgb(67, 67, 67, 1);
+     background-color:rgb(254, 17, 71, 1);
      font-weight: 600;
      letter-spacing: 2px;
      border-radius: 0.5rem;
      box-shadow: 0rem 0rem 0.5rem 0rem rgb(0, 0, 0, 1);
-     color: rgb(255,255, 255);
+     color: rgb(0,0, 0, 1);
 }
 
 /*---hover overlay for SEND icon button---*/
@@ -449,4 +453,22 @@ body {
 		font-family: 'Source Serif Pro', serif;
 		background-color: rgb(26, 16, 112, 1);
 	}
+}
+
+/*---Reduce field margins on mobile devices for better viewing---*/
+
+ @media(min-width:880px) {
+     .user-field-margin{
+         padding-left: 3rem;
+         padding-right: 3rem;
+    }
+}
+
+/*---Reduce contact form margins for contact form for better in fit on mobile devices---*/
+
+ @media(min-width:880px) {
+     .user-form {
+         padding-right: 10rem;
+         padding-left: 10rem;
+    }
 }

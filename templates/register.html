@@ -14,7 +14,7 @@
 <div class="container pt-5">
     <div class="row">
         <div class="col-12 mt-4 mb-5 user-form">
-            <div class="col-12 user-border main-text pt-4 pb-4">
+            <div class="col-12 user-border main-text user-field-margin pt-5 pb-4">
                 <form method="POST" action="{{ url_for('register') }}">
                     <!-- username -->
                     <div class="mb-3">
@@ -26,7 +26,7 @@
                             maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
                     </div>
                     <div class="text-center">
-                        <button type="submit" class="btn btn-font-send">Register</button>
+                        <button type="submit" class="btn btn-font-send  hover-overlay-text">Register</button>
                     </div>
                 </form>
             </div>
