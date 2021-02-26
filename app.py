@@ -46,6 +46,7 @@ def register():
             return redirect(url_for("register"))
 
         register = {
+            "name": request.form.get("username").lower(),
             "username": request.form.get("username").lower(),
             "password": generate_password_hash(request.form.get("password"))
         }
@@ -101,9 +102,12 @@ def profile(username):
     # grab the session user's username from db
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
+    # grab the session user's name from db
+    name = mongo.db.users.find_one(
+        {"username": session["user"]})["name"]
 
     if session["user"]:
-        return render_template("profile.html", username=username)
+        return render_template("profile.html", username=username, name=name)
 
     return redirect(url_for("login"))
 

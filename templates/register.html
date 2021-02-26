@@ -16,9 +16,13 @@
         <div class="col-12 mt-4 mb-5 user-form">
             <div class="col-12 user-border main-text user-field-margin pt-5 pb-4">
                 <form method="POST" action="{{ url_for('register') }}">
+                    <!-- Magnet Name -->
+                    <div class="mb-3">
+                        <input placeholder="Nom de Guerre (optional)" type="text" class="form-control" id="name" name="name" aria-describedby="name" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9\s]{5,15}$" class="validate" required>
+                    </div>
                     <!-- username -->
                     <div class="mb-3">
-                        <input placeholder="Username" type="text" class="form-control" id="username" name="username" aria-describedby="emailHelp" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
+                        <input placeholder="Username" type="text" class="form-control" id="username" name="username" aria-describedby="username" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
                     </div>
                     <!-- password -->
                     <div class="mb-3">
