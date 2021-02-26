@@ -63,13 +63,16 @@ body {
 	font-weight: 600;
 }
 
-.custom-toggler.navbar-toggler {
-	border-color: rgb(255, 255, 255, 1);
-}
-
 .link-font:hover {
 	color: rgb(190, 190, 190, 1) !important;
 	text-decoration: none !important;
+}
+
+.navbar-toggler:focus,
+.navbar-toggler:active,
+.navbar-toggler-icon:focus {
+    outline: none;
+    box-shadow: none;
 }
 
 
