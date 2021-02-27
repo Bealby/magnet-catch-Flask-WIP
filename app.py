@@ -111,6 +111,10 @@ def profile(email):
 
     return redirect(url_for("login"))
 
+@app.route('/catch_log')
+def catch_log():
+    return render_template("catches/catch_log.html")
+
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
