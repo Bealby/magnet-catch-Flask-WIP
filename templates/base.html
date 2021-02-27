@@ -39,6 +39,7 @@
                             <a class="nav-item nav-link link-font pr-5" href="{{url_for('home')}}">Home<span class="sr-only">(current)</span></a>
                             {% if session.user %}
                             <a class="nav-item nav-link link-font pr-5" href="{{url_for('logout')}}">Logout</a>
+                            <a class="nav-item nav-link link-font pr-5" href="{{ url_for('profile', email=session['user']) }}">Profile</a>
                             <a class="nav-item nav-link link-font pr-5" href="">Catch Log</a>
                             <a class="nav-item nav-link link-font pr-5" href="">Add Catches</a>
                             <a class="nav-item nav-link link-font" href="">Contact</a>
