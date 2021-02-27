@@ -1,115 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous" />
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous" />
+        <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" type="text/css" />
+        <title>Magnet Fishing</title>
+    </head>
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
-        integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous" />
-    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" type="text/css" />
-    <title>Magnet Fishing</title>
-</head>
-
-<body>
-    <div class="container-fluid background" aria-label="Magnet Fishing background" id="wrapper">
-        <!--Logo-->
-        <div class="container">
-            <div class="row">
-                <div class="col text-center pt-5 d-none d-sm-block">
-                    <a href="{{url_for('home')}}"><img src="{{url_for('static', filename='images/logo.jpg')}}"
-                            class="logo" alt="Magnet Fishing Stockholm - Logo" /></a>
-                </div>
-            </div>
-        </div>
-        <!--Logo for smaller devices-->
-        <div class="container">
-            <div class="row">
-                <div class="col text-center pt-5 d-block d-sm-none">
-                    <a href="{{url_for('home')}}"><img src="{{url_for('static', filename='images/logo.jpg')}}"
-                            class="logo-small-device" alt="Magnet Fishing Stockholm - Logo" /></a>
-                </div>
-            </div>
-        </div>
-
-        <!--Navigation Bar-->
-        <div class="container pt-5 pb-5">
-            <nav class="navbar navbar-expand-md navbar-color">
-                <button class="navbar-toggler navbar-light mx-auto" type="button" data-toggle="collapse"
-                    data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
-                    aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                    <div class="navbar-nav mx-auto">
-                        <a class="nav-item nav-link link-font pr-5" href="{{url_for('home')}}">Home<span
-                                class="sr-only">(current)</span></a>
-                        {% if session.user %}
-                        <a class="nav-item nav-link link-font pr-5" href="{{url_for('logout')}}">Logout</a>
-                        <a class="nav-item nav-link link-font pr-5"
-                            href="{{ url_for('profile', username=session['user']) }}">Profile</a>
-                        <a class="nav-item nav-link link-font pr-5" href="">Catch Log</a>
-                        <a class="nav-item nav-link link-font pr-5" href="">Add Catches</a>
-                        <a class="nav-item nav-link link-font" href="">Contact</a>
-                        {% else %}
-                        <a class="nav-item nav-link link-font pr-5" href="{{url_for('register')}}">Register</a>
-                        <a class="nav-item nav-link link-font pr-5" href="{{url_for('login')}}">Login</a>
-                        {% endif %}
-                    </div>
-                </div>
-            </nav>
-
-            <!-- Toast Messages -->
-            {% with messages = get_flashed_messages() %}
-            {% if messages %}
-            {% for message in messages %}
-            <div class="row toast-container">
-                <div class="col toast-text toasts toast-cross pt-1 pb-1" id="timer">
-                    <div class="toast-cross">
-                        <a onclick="this.parentNode.parentNode.style.display = 'none'">
-                            <p class="mb-0 text-right"><i class="fas fa-times"></i></p>
-                        </a>
-                    </div>
-                    <div>
-                        <p class="mb-0 pt-1">{{ message }}</p>
+    <body>
+        <div class="container-fluid background" aria-label="Magnet Fishing background" id="wrapper">
+            <!--Logo-->
+            <div class="container">
+                <div class="row">
+                    <div class="col text-center pt-5 d-none d-sm-block">
+                        <a href="{{url_for('home')}}"><img src="{{url_for('static', filename='images/logo.jpg')}}" class="logo" alt="Magnet Fishing Stockholm - Logo" /></a>
                     </div>
                 </div>
             </div>
-            {% endfor %}
-            {% endif %}
-            {% endwith %}
+            <!--Logo for smaller devices-->
+            <div class="container">
+                <div class="row">
+                    <div class="col text-center pt-5 d-block d-sm-none">
+                        <a href="{{url_for('home')}}"><img src="{{url_for('static', filename='images/logo.jpg')}}" class="logo-small-device" alt="Magnet Fishing Stockholm - Logo" /></a>
+                    </div>
+                </div>
+            </div>
 
-            {% block content %}
+            <!--Navigation Bar-->
+            <div class="container pt-5 pb-5">
+                <nav class="navbar navbar-expand-md navbar-color">
+                    <button class="navbar-toggler navbar-light mx-auto" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                        <div class="navbar-nav mx-auto">
+                            <a class="nav-item nav-link link-font pr-5" href="{{url_for('home')}}">Home<span class="sr-only">(current)</span></a>
+                            {% if session.user %}
+                            <a class="nav-item nav-link link-font pr-5" href="{{url_for('logout')}}">Logout</a>
+                            <a class="nav-item nav-link link-font pr-5" href="{{ url_for('profile', username=session['user']) }}">Profile</a>
+                            <a class="nav-item nav-link link-font pr-5" href="">Catch Log</a>
+                            <a class="nav-item nav-link link-font pr-5" href="">Add Catches</a>
+                            <a class="nav-item nav-link link-font" href="">Contact</a>
+                            {% else %}
+                            <a class="nav-item nav-link link-font pr-5" href="{{url_for('register')}}">Register</a>
+                            <a class="nav-item nav-link link-font pr-5" href="{{url_for('login')}}">Login</a>
+                            {% endif %}
+                        </div>
+                    </div>
+                </nav>
 
-            {% endblock %}
+                <!-- Toast Messages -->
+                {% with messages = get_flashed_messages() %} {% if messages %} {% for message in messages %}
+                <div class="row toast-container">
+                    <div class="col toast-text toasts toast-cross pt-1 pb-1" id="timer">
+                        <div class="toast-cross">
+                            <a onclick="this.parentNode.parentNode.style.display = 'none'">
+                                <p class="mb-0 text-right"><i class="fas fa-times"></i></p>
+                            </a>
+                        </div>
+                        <div>
+                            <p class="mb-0 pt-1">{{ message }}</p>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %} {% endif %} {% endwith %} {% block content %} {% endblock %}
+            </div>
+            <!--Footer-->
 
-        </div>
-        <!--Footer-->
-
-        <div class="container footer-style pt-5 pb-2">
-            <div class="row">
-                <div class="col-12 my-auto">
-                    <p>Copyright <i class="far fa-copyright"></i> 2020 Murray Bealby. All Rights Reserved.</p>
+            <div class="container footer-style pt-5 pb-2">
+                <div class="row">
+                    <div class="col-12 my-auto">
+                        <p>Copyright <i class="far fa-copyright"></i> 2020 Murray Bealby. All Rights Reserved.</p>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
-        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
-        crossorigin="anonymous"></script>
-    <script src="{{ url_for('static', filename='js/toasts.js') }}"></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+        <script src="{{ url_for('static', filename='js/toasts.js') }}"></script>
 
-    {% block scripts %}
-    {% endblock %}
-
-</body>
-
+        {% block scripts %} {% endblock %}
+    </body>
 </html>

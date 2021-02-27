@@ -17,20 +17,23 @@
             <div class="col-12 user-border main-text user-field-margin pt-5 pb-4">
                 <form method="POST" action="{{ url_for('register') }}">
                     <!-- Magnet Name -->
+                    <i class="fas fa-user-secret"></i>
                     <div class="mb-3">
                         <input placeholder="Nom de Guerre (optional)" type="text" class="form-control" id="name" name="name" aria-describedby="name" minlength="4" maxlength="15" pattern="^[a-zA-Z0-9\s]{4,15}$" class="validate">
                     </div>
                     <!-- username -->
                     <div class="mb-3">
+                        <i class="fas fa-user-plus"></i>
                         <input placeholder="Username" type="text" class="form-control" id="username" name="username" aria-describedby="username" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
                     </div>
                     <!-- password -->
                     <div class="mb-3">
+                        <i class="fas fa-user-lock"></i>
                         <input placeholder="Password" id="password" name="password" class="form-control" type="password" minlength="5"
                             maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
                     </div>
                     <div class="text-center">
-                        <button type="submit" class="btn btn-font-send  hover-overlay-text">Register</button>
+                        <button type="submit" class="btn btn-font-send  hover-overlay-text">Register<i class="fas fa-sign-in-alt"></i></button>
                     </div>
                 </form>
             </div>
