@@ -36,9 +36,14 @@
             </div>
         </div>
     </div>
-    <div class="row">
-        <div class="col">
-            <p>New Here?<a href="{{ url_for('register') }}">Register Account</a></p>
+    <div class="row d-none d-md-block">
+        <div class="col-6 offset-3 main-text text-center pt-1 pb-1">
+            <p class="mb-0">Already Registered?<a href="{{ url_for('login') }}">Login</a></p>
+        </div>
+    </div>
+    <div class="div d-md-none">
+        <div class="col-12 main-text text-center pt-1 pb-1">
+            <p class="mb-0">Already Registered?<a href="{{ url_for('login') }}">Login</a></p>
         </div>
     </div>
 </div>
