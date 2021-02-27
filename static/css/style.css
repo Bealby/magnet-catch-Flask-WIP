@@ -317,17 +317,6 @@ body {
 	color: rgb(255, 255, 255, 1);
 }
 
-#wrapper-footer {
-     padding-bottom:3rem;
-}
-
-.footer{
-     position: absolute;
-     bottom: 0;
-     width:100%;
-     height:3rem;
-}
-
 /*----Toasts-----*/
 
 .toast-container{
