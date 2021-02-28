@@ -153,6 +153,7 @@ def edit_catch(catch_id):
         }
         mongo.db.catches.update({"_id": ObjectId(catch_id)}, submit)
         flash("Task Successfully Updated")
+        return redirect(url_for("get_catches"))
 
     catch = mongo.db.catches.find_one({"_id": ObjectId(catch_id)})
     return render_template("magnet_catch_log/edit_catch.html", catch=catch)
