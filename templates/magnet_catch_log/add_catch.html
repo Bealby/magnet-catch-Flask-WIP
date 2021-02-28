@@ -1,111 +1,40 @@
 {% extends 'base.html' %} {% block content %}
 
-<section>
-
 <!--Catch Log-->
 <div class="container pt-5">
     <div class="row mx-auto">
-        <a href="{{url_for('get_catches')}}"><i class="fas fa-chevron-left d-block d-sm-none d-none d-sm-block d-md-none"></i></a>
+        <a href="{{url_for('get_catches')}}"><i
+                class="fas fa-chevron-left d-block d-sm-none d-none d-sm-block d-md-none"></i></a>
         <div class="col-8 offset-2 text-center page-header">
             <p>Catch Form</p>
         </div>
     </div>
 
 
-<!--Add Catch Form-->
+    <!--Add Catch Form-->
     <form action="{{ url_for('add_catch') }}" method="POST">
-        <!--First Row-->
-        <div class="row pl-2 pt-4">
-            <div class="form-row col-md-6 col-sm-12 mt-3">
-                <input type="text" class="form-control form-fields" id="name" name="name" placeholder="Name" />
-            </div>
-            <div class="form-row col-md-6 col-sm-12 mt-3">
-                <input type="email" class="form-control form-fields" id="email" name="email" placeholder="Email" />
-            </div>
+        <!-- Date -->
+        <div class="col">
+            <i class="fas fa-user-cog"></i>
+            <input placeholder="Date" type="date" class="form-control" id="date" name="date" aria-describedby="date"
+                required>
         </div>
-
-        <!--Second Row-->
-        <div class="row pl-2">
-            <div class="form-row col-md-5 col-sm-12 mt-3">
-                <select class="custom-select form-control form-fields" id="magnet" name="magnet">
-                    <option selected disabled value="">Select Magnet</option>
-                    {% for magnet in magnet %}
-                    <option value="{{magnet.magnet}}">{{magnet.magnet}}</option>
-                    {% endfor %}
-                </select>
-            </div>
-
-            <div class="form-row col-md-6 col-sm-12 mt-3">
-                <select class="custom-select form-control form-fields" id="area_name" name="area_name">
-                    <option selected disabled value="">Select Area</option>
-                    {% for area in area %}
-                    <option value="{{area.area_name}}">{{area.area_name}}</option>
-                    {% endfor %}
-                </select>
-            </div>
-            <div class="form-row col-md-1 mt-3">
-                <!-- Button Trigger Modal -->
-                <button type="button" class="btn btn-primary default-button mx-auto" data-toggle="modal" data-target="#exampleModalCenter">
-                    Map
-                </button>
-
-                <!-- Modal -->
-                <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLongTitle">Map</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                <img src="static/images/areas.jpg" class="modal-image" alt="Area Map" />
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="col">
+            <!-- Country -->
+            <i class="fas fa-city"></i>
+            <input placeholder="Country" type="text" id="country" name="country" class="form-control" required>
         </div>
-
-        <!--Last Rows-->
-        <div class="form-row col-sm-12 col-md-10 mx-auto mt-4">
-            <input type="text" class="form-control form-fields" id="location_name" name="location_name" placeholder="Location: i.e. street, bridge, canal" />
-        </div>
-
-        <div class="form-row col-sm-12 col-md-10 mx-auto mt-4">
-            <input type="text" class="form-control form-fields" id="catch_1" name="catch_1" placeholder="Catch 1" />
-        </div>
-
-        <div class="form-row col-sm-12 col-md-10 mx-auto mt-4">
-            <input type="text" class="form-control form-fields" id="catch_2" name="catch_2" placeholder="Catch 2" />
-        </div>
-
-        <div class="form-row col-sm-12 col-md-10 mx-auto mt-4">
-            <input type="text" class="form-control form-fields" id="catch_3" name="catch_3" placeholder="Catch 3" />
-        </div>
-
-        <div class="form-row col-sm-12 col-md-10 mx-auto mt-4">
-            <input type="text" class="form-control form-fields" id="catch_4" name="catch_4" placeholder="Catch 4" />
-        </div>
-
-        <div class="form-row col-sm-12 col-md-10 mx-auto mt-4">
-            <input type="text" class="form-control form-fields" id="catch_5" name="catch_5" placeholder="Catch 5" />
-        </div>
-
-        <div class="form-row col-md-6 offset-md-3 col-10 offset-1 mx-auto mt-4">
-            <input type="date" class="form-control form-fields" id="catch_date" name="catch_date" />
-        </div>
-
-        <div class="form-row col-md-4 offset-md-4 mx-auto mt-3">
-            <button type="submit" name="action" class="btn btn-primary center mt-4 mx-auto default-button">Submit</button>
+        <!-- City -->
+        <div class="col">
+            <i class="fas fa-globe"></i>
+            <input placeholder="City" type="text" id="city" name="city" class="form-control" required>
         </div>
     </form>
+    <div class="row">
+        <div class="col text-center">
+            <i class="far fa-calendar-alt"></i>
+            <button type="submit" name="action" class="btn btn-primary default-button">Submit</button>
+        </div>
+    </div>
 </div>
-
-</section>
-
 {% endblock %}
