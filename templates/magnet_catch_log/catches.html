@@ -29,7 +29,7 @@
                     <i class="fas fa-magnet fa-rotate-90 pt-0"></i>&nbsp;
                     {% if session.user|lower == catch.created_by|lower %}
                     <a href="{{url_for('edit_catch', catch_id=catch._id)}}" class="edit-a mr-2">Edit</a>
-                    <a href="" class="delete-a">Delete</a>
+                    <a href="{{ url_for('delete_catch', catch_id=catch._id) }}" class="delete-a">Delete</a>
                     {% endif %}
                 </div>
             </div>

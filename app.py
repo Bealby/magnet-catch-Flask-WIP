@@ -152,11 +152,18 @@ def edit_catch(catch_id):
             "created_by": session["user"]
         }
         mongo.db.catches.update({"_id": ObjectId(catch_id)}, submit)
-        flash("Task Successfully Updated")
+        flash("Catch Successfully Updated")
         return redirect(url_for("get_catches"))
 
     catch = mongo.db.catches.find_one({"_id": ObjectId(catch_id)})
     return render_template("magnet_catch_log/edit_catch.html", catch=catch)
+
+
+@app.route("/delete_catch/<catch_id>")
+def delete_catch(catch_id):
+    mongo.db.catches.remove({"_id": ObjectId(catch_id)})
+    flash("Catch Successfully Deleted")
+    return redirect(url_for("get_catches"))
 
 
 if __name__ == "__main__":
