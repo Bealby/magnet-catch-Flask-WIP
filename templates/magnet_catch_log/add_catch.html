@@ -12,28 +12,31 @@
 
 
     <!--Add Catch Form-->
-    <form action="{{ url_for('add_catch') }}" method="POST">
-        <!-- Date -->
-        <div class="col">
-            <i class="fas fa-user-cog"></i>
-            <input placeholder="Date" type="date" class="form-control" id="date" name="date" aria-describedby="date"
-                required>
-        </div>
-        <div class="col">
-            <!-- Country -->
-            <i class="fas fa-city"></i>
-            <input placeholder="Country" type="text" id="country" name="country" class="form-control" required>
-        </div>
-        <!-- City -->
-        <div class="col">
-            <i class="fas fa-globe"></i>
-            <input placeholder="City" type="text" id="city" name="city" class="form-control" required>
-        </div>
-    </form>
-    <div class="row">
-        <div class="col text-center">
-            <i class="far fa-calendar-alt"></i>
-            <button type="submit" name="action" class="btn btn-primary default-button">Submit</button>
+    <div class="col-12 mt-4 mb-5 user-form">
+        <div class="col-12 user-border main-text user-field-margin pt-5 pb-4">
+            <form method="POST" action="{{ url_for('add_catch') }}">
+                <!-- Date -->
+                <div class="col">
+                    <i class="far fa-calendar-alt"></i>
+                    <input placeholder="Date" type="date" class="form-control validate" id="date" name="date"
+                        aria-describedby="date" required>
+                </div>
+                <div class="col">
+                    <!-- Country -->
+                    <i class="fas fa-city"></i>
+                    <input placeholder="Country" type="text" id="country" name="country" class="form-control validate" required>
+                </div>
+                <!-- City -->
+                <div class="col">
+                    <i class="fas fa-globe"></i>
+                    <input placeholder="City" type="text" id="city" name="city" class="form-control validate" required>
+                </div>
+                <div class="row">
+                    <div class="col text-center">
+                        <button type="submit" name="action" class="btn btn-primary default-button">Submit</button>
+                    </div>
+                </div>
+            </form>
         </div>
     </div>
 </div>

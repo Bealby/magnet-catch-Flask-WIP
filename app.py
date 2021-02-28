@@ -129,13 +129,12 @@ def get_catches():
 @app.route("/add_catch", methods=["GET", "POST"])
 def add_catch():
     if request.method == "POST":
-        task = {
-            "date": request.form.get("category_name"),
-            "country": request.form.get("task_name"),
-            "city": request.form.get("task_description"),
-            "created_by": session["user"]
+        catch = {
+            "date": request.form.get("date"),
+            "country": request.form.get("country"),
+            "city": request.form.get("city"),
         }
-        mongo.db.catches.insert_one(task)
+        mongo.db.catches.insert_one(catch)
         flash("Catch Successfully Added")
         return redirect(url_for("get_catches"))
 
