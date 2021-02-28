@@ -138,12 +138,12 @@ body {
 
 /*-----FORMS-----*/
 .form-header{
-	color: rgb(255, 255, 255, 1);
+	color: rgb(0, 0, 0, 1);
 	font-size: 1.2rem;
 	margin-bottom: 0rem;
 	font-weight: 600;
 	font-family: 'Source Serif Pro', serif;
-	background-color: rgb(26, 16, 112, 1);
+	background-color: rgb(255, 255, 255, 1);
 }
 
 .form-control:focus {
@@ -275,15 +275,18 @@ body {
 
 /*-----ACCORDION COLLAPSE - CATCH LOG-----*/
 
-.btn-block,
 .card-header {
-	background-color: rgb(26, 16, 112, 1);
-	border: rgb(26, 16, 112, 1);
+    background-color: rgb(255, 255, 255, 1);
+}
+
+.btn-block{
+    background-color: rgb(255, 255, 255, 1);
 }
 
 .card {
-	background-color: rgb(255, 255, 255, .8);
-	border: rgb(26, 16, 112, .8);
+    background-color: rgb(255, 255, 255, 1);
+    border: 1px solid rgb(254, 17, 71, 1);
+
 }
 
 
@@ -468,12 +471,12 @@ body {
 
 @media(min-width:31.875rem) {
 	.form-header{
-		color: rgb(255, 255, 255, 1);
+		color: rgb(0, 0, 0, 1);
 		font-size: 1.4rem;
 		margin-bottom: 0rem;
 		font-weight: 600;
 		font-family: 'Source Serif Pro', serif;
-		background-color: rgb(26, 16, 112, 1);
+		background-color: rgb(255, 255, 255, 1);
 	}
 }
 

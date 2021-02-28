@@ -6,11 +6,6 @@
     <div class="row">
         <div class="col-8 offset-2 text-center page-header">
             <p>Catches</p>
-            {% if name %}
-            <p>{{ name }}</p>
-            {% else %}
-            <p>{{ email }}</p>
-            {% endif %}
         </div>
     </div>
 </div>
@@ -25,7 +20,7 @@
         <div class="card-header" id="headingOne">
             <div class="row">
                 <div class="col-md-8 col-sm-12">
-                    <button class="btn btn-block text-left pl-0 form-header" type="button" data-toggle="collapse"
+                    <button class="btn btn-block text-left text-muted pl-0 form-header" type="button" data-toggle="collapse"
                         data-target="#collapse{{ loop.index }}" aria-expanded="false" aria-controls="collapseOne">
                         <i class="fas fa-chevron-down"></i>&nbsp;&nbsp;&nbsp;{{catch.date}} - {{catch.created_by}}
                     </button>
@@ -40,7 +35,7 @@
 
         <div id="collapse{{ loop.index }}" class="collapse" aria-labelledby="headingOne"
             data-parent="#accordionExample">
-            <div class="card-body catch-log-font">
+            <div class="card-body text-muted catch-log-font">
                 <div class="row">
                     <div class="col-md-6 col-sm-12">
                         <p class="catch-log-align"><u>NAME</u></p>
