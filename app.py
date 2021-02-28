@@ -59,6 +59,8 @@ def register():
 
     return render_template("register.html")
 
+# Function to load 'login' page
+
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
@@ -89,6 +91,8 @@ def login():
     return render_template("login.html")
 
 
+# Function to load 'logout' page
+
 @app.route("/logout")
 def logout():
     # remove user from session cookie
@@ -96,6 +100,8 @@ def logout():
     session.pop("user")
     return redirect(url_for("login"))
 
+
+# Function to load 'Profile' page
 
 @app.route("/profile/<email>", methods=["GET", "POST"])
 def profile(email):
@@ -112,10 +118,28 @@ def profile(email):
     return redirect(url_for("login"))
 
 
+# Function to load 'Catches' page
+
 @app.route("/get_catches")
 def get_catches():
     catches = list(mongo.db.catches.find())
     return render_template("magnet_catch_log/catches.html", catches=catches)
+
+
+@app.route("/add_catch", methods=["GET", "POST"])
+def add_catch():
+    if request.method == "POST":
+        task = {
+            "date": request.form.get("category_name"),
+            "country": request.form.get("task_name"),
+            "city": request.form.get("task_description"),
+            "created_by": session["user"]
+        }
+        mongo.db.catches.insert_one(task)
+        flash("Catch Successfully Added")
+        return redirect(url_for("get_catches"))
+
+    return render_template("magnet_catch_log/add_catch.html")
 
 
 if __name__ == "__main__":

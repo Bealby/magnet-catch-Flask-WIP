@@ -41,7 +41,7 @@
                             <a class="nav-item nav-link link-font pr-5" href="{{url_for('logout')}}">Logout</a>
                             <a class="nav-item nav-link link-font pr-5" href="{{ url_for('profile', email=session['user']) }}">Profile</a>
                             <a class="nav-item nav-link link-font pr-5" href="{{url_for('get_catches')}}">Catches</a>
-                            <a class="nav-item nav-link link-font pr-5" href="">Add Catches</a>
+                            <a class="nav-item nav-link link-font pr-5" href="{{url_for('add_catch')}}">Add Catches</a>
                             <a class="nav-item nav-link link-font" href="">Contact</a>
                             {% else %}
                             <a class="nav-item nav-link link-font pr-5" href="{{url_for('register')}}">Register</a>
