@@ -111,9 +111,11 @@ def profile(email):
 
     return redirect(url_for("login"))
 
-@app.route('/catch_log')
-def catch_log():
-    return render_template("catches/catch_log.html")
+
+@app.route("/get_catches")
+def get_catches():
+    catches = list(mongo.db.catches.find())
+    return render_template("magnet_catch_log/catches.html", catches=catches)
 
 
 if __name__ == "__main__":

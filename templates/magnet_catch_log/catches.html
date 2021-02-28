@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container pt-5">
+    <div class="row">
+        <div class="col-8 offset-2 text-center page-header">
+            <p>Catches</p>
+            {% if name %}
+            <p>{{ name }}</p>
+            {% else %}
+            <p>{{ email }}</p>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+
+<!--Accordion Collapse-->
+<!--Loop index from the jinja for loop used for collapse function to work individually-->
+{% if catches|length > 0 %}
+<div class="accordion pt-5" id="accordionExample">
+    {% for catch in catches %}
+    <div class="card mb-2">
+        <div class="card-header" id="headingOne">
+            <div class="row">
+                <div class="col-md-8 col-sm-12">
+                    <button class="btn btn-block text-left pl-0 form-header" type="button" data-toggle="collapse"
+                        data-target="#collapse{{ loop.index }}" aria-expanded="false" aria-controls="collapseOne">
+                        <i class="fas fa-chevron-down"></i>&nbsp;&nbsp;&nbsp;{{catch.date}} - {{catch.created_by}}
+                    </button>
+                </div>
+                <div class="col-md-4 col-sm-12 edit-delete-margins">
+                    <i class="fas fa-magnet fa-rotate-90 pt-0"></i>&nbsp;
+                    <a href="" class="edit-a mr-2">Edit</a>
+                    <a href="" class="delete-a">Delete</a>
+                </div>
+            </div>
+        </div>
+
+        <div id="collapse{{ loop.index }}" class="collapse" aria-labelledby="headingOne"
+            data-parent="#accordionExample">
+            <div class="card-body catch-log-font">
+                <div class="row">
+                    <div class="col-md-6 col-sm-12">
+                        <p class="catch-log-align"><u>NAME</u></p>
+                        <ul class="catch-log-align">
+                            <li>{{catch.created_by}}</li>
+                        </ul>
+
+                        <p class="catch-log-align"><u>COUNTRY</u></p>
+                        <ul class="catch-log-align">
+                            <li>{{catch.country}}</li>
+                        </ul>
+
+                        <p class="catch-log-align"><u>CITY</u></p>
+                        <ul class="catch-log-align">
+                            <li>{{catch.city}}</li>
+                        </ul>
+                    </div>
+
+                    <div class="col-md-6 col-sm-12 catch-log-align">
+                        <img src="{{url_for('static', filename='images/logo.jpg')}}" class="logo-small-device"
+                            alt="Magnet Fishing Stockholm - Logo" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% endfor %}
+</div>
+{% else %}
+<h3 class="red-text text-darken-4 center-align">No Results Found</h3>
+{% endif %}
+
+
+{% endblock %}

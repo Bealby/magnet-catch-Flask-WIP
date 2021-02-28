@@ -40,7 +40,7 @@
                             {% if session.user %}
                             <a class="nav-item nav-link link-font pr-5" href="{{url_for('logout')}}">Logout</a>
                             <a class="nav-item nav-link link-font pr-5" href="{{ url_for('profile', email=session['user']) }}">Profile</a>
-                            <a class="nav-item nav-link link-font pr-5" href="{{url_for('catch_log')}}">Catch Log</a>
+                            <a class="nav-item nav-link link-font pr-5" href="{{url_for('get_catches')}}">Catches</a>
                             <a class="nav-item nav-link link-font pr-5" href="">Add Catches</a>
                             <a class="nav-item nav-link link-font" href="">Contact</a>
                             {% else %}
