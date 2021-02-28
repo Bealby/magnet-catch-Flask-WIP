@@ -133,6 +133,7 @@ def add_catch():
             "date": request.form.get("date"),
             "country": request.form.get("country"),
             "city": request.form.get("city"),
+            "created_by": session["user"]
         }
         mongo.db.catches.insert_one(catch)
         flash("Catch Successfully Added")
