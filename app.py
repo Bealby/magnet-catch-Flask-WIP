@@ -142,6 +142,22 @@ def add_catch():
     return render_template("magnet_catch_log/add_catch.html")
 
 
+@app.route("/edit_catch/<catch_id>", methods=["GET", "POST"])
+def edit_catch(catch_id):
+    if request.method == "POST":
+        submit = {
+            "date": request.form.get("date"),
+            "country": request.form.get("country"),
+            "city": request.form.get("city"),
+            "created_by": session["user"]
+        }
+        mongo.db.catches.update({"_id": ObjectId(catch_id)}, submit)
+        flash("Task Successfully Updated")
+
+    catch = mongo.db.catches.find_one({"_id": ObjectId(catch_id)})
+    return render_template("magnet_catch_log/edit_catch.html", catch=catch)
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
